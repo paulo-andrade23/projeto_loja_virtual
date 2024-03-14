@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!------ LINK CSS STYLE ------->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pesquisa.css">
+  <!------ FAVICON ------->
+  <link rel="shortcut icon" href="assets/img/favicon/830da1b9d031a459d1fc38de3c90197c_tn-removebg-preview.png"
+    type="image/x-icon">
+  <!------ LINK FONTAWESOME ------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!----- LINK SLICK JS ------>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+  <!--icon Dark-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" />
+  <!-- SCRIPT JIVOCHAT 
+  <script src="//code.jivosite.com/widget/1YD6UYyWt8" async></script>-->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Um script que será baixado em paralelo para analisar a página e 
+       executado depois que a página terminar de analisar: -->
+  <script src="assets/js/index.js" defer></script>
+
+  <title>Loja virtual</title>
+
+</head>
+
+<body>
+
+  <!------ MENU ------->
+  <header id="header" class="container header">
+    <nav class="menu nav">
+      <div class="divDaLogo">
+        <img src="assets/img/Logo-Ecommerce/loja2.png" alt="logo" class="logoEcommerce">
+      </div>
+     
+<!--
+      <div class="pesquisa">
+        <input type="search" placeholder="Buscar produtos...">
+      </div>-->
+        
+
+<!--
+      <ul class='list menuMobile' id="menuMobile" role="menuMobile">
+        <li id="active-link-menu"><a href="/index.html">Início</a></li>
+        <li><a href="/produtos.html">Produtos</a></li>
+        <li><a href="javascript:void(0)">Sobre-nós</a></li>
+        <li><a href="javascript:void(0)">Contatos</a></li>
+      </ul>-->
+
+<!--
+      <div class="configs-menu">
+        <div class="config">
+          <a>
+            <i class="fas fa-shopping-bag" id="cart-btn"></i>
+            <p id="cont-itens-carrinho" class="sacolinhaDark"></p>
+          </a>
+        </div>
+
+        <div class="cardCarrinho-container" id="meuCarrinho">
+
+          <section class="box-cart">
+
+            <section class="description">
+
+              <div class="produtos" style="width: 45%;">
+                <p>Produtos</p>
+              </div>
+
+              <div style="width: 30%;">
+                <p>Quantidade</p>
+              </div>
+
+              <div style="width: 20%;">
+                <p>Preço</p>
+              </div>
+
+            </section>
+            <div class="cart-item">
+
+            </div>
+
+            <span id="totalFinal" class="total">
+              <h2> Nenhum item escolhido </h2>
+            </span>
+
+            <button id="btnFinalizarCarrinho">
+              <h2>Comprar</h2>
+            </button>
+
+          </section>
+        </div>-->
+
+       
+        <span id="user-email"></span>
+
+        <div class="config">
+          <button type="button" onclick="Mudarestado('openConfig')" class="btn-menu"  aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span class="hamburger"></span>
+          </button>
+        </div>
+
+        <div id="openConfig" class="btn-config" style="display:none;">
+
+          <ul id="ul-OpenConfig">
+
+            <a href="index.html">
+              <label>                      
+                  <li id="btn-theme">      
+                    <p>Ìnicio</p>
+                  </li></a>
+              </label>
+
+            <li>
+              <p>Contato</p>
+            </li>
+
+            <li>
+              <p>Sobre</p>
+            </li>
+            
+            <div class="ul-OpenConfig">
+              <input type="checkbox" name="chenge-theme" id="chenge-theme" />
+              <label for="chenge-theme">
+                <li id="btn-theme">
+                  <p>Tema</p>
+                  <i class="bi bi-sun">
+                        <p onclick="FecharMenuConfig('openConfig');">Light</p>
+                  </i>
+                  <i class="bi bi-moon">
+                        <p onclick="FecharMenuConfig('openConfig');">Dark</p>
+                  </i>
+                </li>
+              </label>
+            </div>
+
+            <li>
+              <p>Direitos</p>
+            </li>
+            
+
+            <a href="login-page.html">
+              <label>                      
+                  <li id="btn-theme">      
+                    <p>login</p>
+                  </li></a>
+              </label>
+      
+
+            <span id='li-sair'></span>
+          </ul>
+
+        <!--ABERTURA DA DIV SISTEMA DE CARRINHO -->
+      </div>
+     
+      <!--<div class="divMenuMobile">
+        <button class="btn-menu" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false"
+          style="color: var(--important-color)"><span class="hamburger"></span>
+        </button>
+      </div>-->
+
+    </nav>
+
+  </header>
+
+  <!-------- BANNER INICIAL -------->
+  <main class="banner-initial">
+    <figure>
+      <div class="search-banner">
+        <h4>
+          Receba o melhor produto em sua casa
+        </h4>
+        
+      <div class="alinhar-busca">
+        <input id="searchInput" type="search" placeholder="Buscar produtos...">
+        <ul id="searchResults"></ul>
+      </div>
+      <span class="close-icon" id="closeIcon">&times;</span>
+      <div class="frete">
+        <p>Frete Grátis em compras acima de <b>R$ 129,99</b></p>
+      </div>
+    </div>
+    
+  </figure>
+</main>
+  <div id="overlay-busca" class="overlay-busca"></div>
+
+  <!---------- CATEGORIAS ---------->
+  <section class="categories">
+    <!--<div class="titles-page">
+      <h5>Navegue entre as categorias</h5>
+    </div>-->
+    
+    <div class="scrolling-wrapper">
+      <div class="box">
+        <div>
+          <i class="fa-solid fa-shirt"></i>
+        </div>
+        <p>Modas</p>
+      </div>
+      <div class="box">
+        <div>
+          <i class="fa-solid fa-volleyball"></i>
+        </div>
+        <p>Esportes</p>
+      </div>
+      <div class="box">
+        <div>
+          <i class="fa-solid fa-book"></i>
+        </div>
+        <p>E-book</p>
+      </div>
+      <div class="box">
+        <div>
+          <i class="fa-solid fa-headphones-simple"></i>
+        </div>
+        <p>Eletrônicos</p>
+      </div>
+      <div class="box">
+        <div>
+          <i class="fa-solid fa-headphones-simple"></i>
+        </div>
+        <p>Eletrônicos</p>
+      </div>
+      <div class="box">
+        <div>
+          <i class="fa-solid fa-headphones-simple"></i>
+        </div>
+        <p>Eletrônicos</p>
+      </div>
+       
+      
+    </div>
+
+  </section>
+
+  <!----------- CATALOGUE ---------->
+  <section class="catalogue-initial">
+
+    <div class="titles-page">
+      <h5>PRODUTOS</h5>
+    </div>
+
+    <ul class="box-catalogue">
+
+      <li>
+        <figure>
+          <img src="assets/img/projects/camisaDJ-svg.png" alt="HeadPhone">
+        </figure>
+        <figcaption>
+          <div>
+            <h1>Camisa DJ YP</h1>
+            <h4>R$ 3.319,99</h4>
+          </div>
+
+          <section>
+            <i class="fas fa-shopping-cart"></i>
+            <!--<i class="fas fa-heart"></i>-->
+            </div>
+          </section>
+        </figcaption>
+      </li>
+
+      <li>
+        <figure>
+          <img src="assets/img/projects/console.png" alt="HeadPhone">
+        </figure>
+        <figcaption>
+          <div>
+            <h1>Controle Xbox</h1>
+            <h4>R$ 290,00</h4>
+          </div>
+
+          <section>
+            <i class="fas fa-shopping-cart"></i>
+            <!--<i class="fas fa-heart"></i>-->
+            </div>
+          </section>
+        </figcaption>
+      </li>
+
+      <li>
+        <figure>
+          <img src="assets/img/projects/headphone1.png" alt="HeadPhone">
+        </figure>
+        <figcaption>
+          <div>
+            <h1>Headset Gamer</h1>
+            <h4>R$ 349,99</h4>
+          </div>
+
+          <section>
+            <i class="fas fa-shopping-cart"></i>
+            <!--<i class="fas fa-heart"></i>-->
+            </div>
+          </section>
+        </figcaption>
+      </li>
+
+      <li>
+        <figure>
+          <img src="assets/img/projects/nike-jordan.png" alt="HeadPhone">
+        </figure>
+        <figcaption>
+          <div>
+            <h1>Air Jordan</h1>
+            <h4>R$ 329,99</h4>
+          </div>
+
+          <section>
+            <i  class="fas fa-shopping-cart"></i>
+            <!--<i class="fas fa-heart"></i>-->
+            </div>
+          </section>
+        </figcaption>
+      </li>
+
+      <li>
+        <figure>
+          <img src="assets/img/projects/relógio.png" alt="HeadPhone">
+        </figure>
+        <figcaption>
+          <div>
+            <h1>Xiaomi Mi Band</h1>
+            <h4>R$ 169,99</h4>
+          </div>
+
+          <section>
+            <i class="fas fa-shopping-cart"></i>
+            <!--<i class="fas fa-heart"></i>-->
+            </div>
+          </section>
+        </figcaption>
+      </li>
+
+
+      <li>
+        <figure>
+          <img src="assets/img/projects/whey.png" alt="HeadPhone">
+        </figure>
+        <figcaption>
+          <div>
+            <h1>Nutriwhey</h1>
+            <h4>R$ 48,49</h4>
+          </div>
+
+          <section>
+            <i class="fas fa-shopping-cart"></i>
+            <!--<i class="fas fa-heart"></i>-->
+            </div>
+          </section>
+        </figcaption>
+      </li>
+
+      <li>
+        <figure>
+          <img src="assets/img/projects/tenis-masc.png" alt="HeadPhone">
+        </figure>
+        <figcaption>
+          <div>
+            <h1>Slant Summer</h1>
+            <h4>R$ 131,19</h4>
+          </div>
+
+          <section>
+            <i class="fas fa-shopping-cart"></i>
+            <!--<i class="fas fa-heart"></i>-->
+            </div>
+          </section>
+        </figcaption>
+      </li>
+
+      <li>
+        <figure>
+          <img src="assets/img/projects/Philco-Tv.png" alt="HeadPhone">
+        </figure>
+        <figcaption>
+          <div>
+            <h1>Philco Smart TV</h1>
+            <h4>R$ 1.399,00</h4>
+          </div>
+
+          <section>
+            <i class="fas fa-shopping-cart"></i>
+            <!--<i class="fas fa-heart"></i>-->
+            </div>
+          </section>
+        </figcaption>
+      </li>
+
+      <li>
+        <figure>
+          <img src="assets/img/projects/alexa.png" alt="HeadPhone">
+        </figure>
+
+        <figcaption>
+          <div>
+            <h1>Alexa Echo Dot</h1>
+            <h4>R$ 379,05</h4>
+          </div>
+
+
+          <section>
+            <i class="fas fa-shopping-cart"></i>
+            <!--<i class="fas fa-heart"></i>-->
+            </div>
+          </section>
+        </figcaption>
+      </li>
+
+
+    </ul>
+
+  </section>
+
+  <!------ TIPOS DE PAGAMENTOS ----->
+  <section class="payments">
+    <div>
+
+      <section class="none-payment">
+        <h1>Melhor forma de pagar</h1>
+        <p>Fácil, prático e divertido</p>
+      </section>
+
+      <ul>
+        <li>
+          <i class="far fa-credit-card"></i>
+          <section>
+            <h3>Cartão</h3>
+            <p>Em até 12x sem juros</p>
+          </section>
+        </li>
+
+        <li>
+          <i class="fas fa-barcode"></i>
+          <section>
+            <h3>Boleto</h3>
+            <p>Escaneie na hora</p>
+          </section>
+        </li>
+
+        <li>
+          <i class="fas fa-qrcode"></i>
+          <section>
+            <h3>Via Pix</h3>
+            <p>000.000.000-00</p>
+          </section>
+        </li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!------ PRODUCTS DO DIA -------->
+  <section class="products">
+
+    <div class="titles-page titles-page2">
+      <h5>OFERTAS DO DIA</h5>
+    </div>
+
+    <article class="box-products">
+
+      <section class="carrossel carrtwo">
+
+        <li>
+          <figure>
+            <img src="assets/img/projects/iphone.png" alt="HeadPhone">
+          </figure>
+          <figcaption>
+            <div>
+              <h1>Apple iPhone 11</h1>
+              <h4>R$ 3.319,99</h4>
+            </div>
+            <section>
+              <i data-produtoid="0" class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              </div>
+            </section>
+          </figcaption>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/projects/console.png" alt="HeadPhone">
+          </figure>
+          <figcaption>
+            <div>
+              <h1>Controle Xbox</h1>
+              <h4>R$ 290,00</h4>
+            </div>
+            <section>
+              <i data-produtoid="1" class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              </div>
+            </section>
+          </figcaption>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/projects/headphone1.png" alt="HeadPhone">
+          </figure>
+          <figcaption>
+            <div>
+              <h1>Headset Gamer</h1>
+              <h4>R$ 349,99</h4>
+            </div>
+            <section>
+              <i data-produtoid="2" class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              </div>
+            </section>
+          </figcaption>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/projects/nike-jordan.png" alt="HeadPhone">
+          </figure>
+          <figcaption>
+            <div>
+              <h1>Air Jordan</h1>
+              <h4>R$ 329,99</h4>
+            </div>
+            <section>
+              <i data-produtoid="3" class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              </div>
+            </section>
+          </figcaption>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/projects/relógio.png" alt="HeadPhone">
+          </figure>
+          <figcaption>
+            <div>
+              <h1>Xiaomi Mi Band</h1>
+              <h4>R$ 169,99</h4>
+            </div>
+            <section>
+              <i data-produtoid="4" class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              </div>
+            </section>
+          </figcaption>
+        </li>
+
+
+        <li>
+          <figure>
+            <img src="assets/img/projects/whey.png" alt="HeadPhone">
+          </figure>
+          <figcaption>
+            <div>
+              <h1>Nutriwhey</h1>
+              <h4>R$ 48,49</h4>
+            </div>
+            <section>
+              <i data-produtoid="5" class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              </div>
+            </section>
+          </figcaption>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/projects/tenis-masc.png" alt="HeadPhone">
+          </figure>
+          <figcaption>
+            <div>
+              <h1>Slant Summer</h1>
+              <h4>R$ 131,19</h4>
+            </div>
+            <section>
+              <i data-produtoid="6" class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              </div>
+            </section>
+          </figcaption>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/projects/Philco-Tv.png" alt="HeadPhone">
+          </figure>
+          <figcaption>
+            <div>
+              <h1>Philco Smart TV</h1>
+              <h4>R$ 1.399,00</h4>
+            </div>
+            <section>
+              <i data-produtoid="7" class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              </div>
+            </section>
+          </figcaption>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/projects/alexa.png" alt="HeadPhone">
+          </figure>
+
+          <figcaption>
+            <div>
+              <h1>Alexa Echo Dot</h1>
+              <h4>R$ 379,05</h4>
+            </div>
+
+
+            <section>
+              <i data-produtoid="8" class="fas fa-shopping-cart"></i>
+              <i class="fas fa-heart"></i>
+              </div>
+            </section>
+          </figcaption>
+        </li>
+
+      </section>
+
+      <div id="btn-carr" class="buttons-arrows">
+        <button class="slick-prev-two">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <button class="slick-next-two">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </div>
+
+    </article>
+
+  </section>
+
+  <!------------ SEE ALL ----------->
+  <section class="see-all">
+    <div class="see-all-left">
+      <h5>Último sapato elegante</h5>
+      <p>Sapato masculino da coleção 2022</p>
+
+      <button class="btn-all">
+        Ver todos
+      </button>
+    </div>
+
+    <div class="see-all-image">
+
+    </div>
+  </section>
+
+  <!-------------- FOOTER ---------------->
+  <footer class="final">
+    <div class="menu-footer">
+      <div class="media">
+        <div class="media-title">
+          <a href="">
+            <h2><img src="assets/img/Logo-Ecommerce/loja2.png" alt="Logo E-commerce"></h2>
+          </a>
+        </div>
+
+        <div class="social-media">
+          <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="shop">
+        <h3>Mais</h3>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Localização</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="links">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="#">Eletrônicos</a></li>
+          <li><a href="#">Modas</a></li>
+          <li><a href="#">Esportes</a></li>
+          <li><a href="#">E-Books</a></li>
+          <li><a href="#">Beleza</a></li>
+        </ul>
+      </div>
+
+      <div class="contact finalContato">
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="tel:+551234567890">+55 12 3456 7890</a></li>
+          <li><a href="youngpeople.com.br">youngpeople.com.br</a></li>
+          <li><a href="#">Rua Principal, 123. Cidade - PE</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      <p>Termos, acordos e Política de Privacidade.</p>
+      <p>© 2024 Sua Loja online. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-------------- SCRIPT SLICK JS ------------------->
+  <script src="assets/js/scriptCarrinho.js"></script>
+  <script src="assets/js/menuMobile.js"></script>
+
+  <!-- SWEETALERT PERSONALIZADO -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <!------ SCRIPT INDEX JS ------->
+</body>
+
+
+<script>
+
+
+document.addEventListener("DOMContentLoaded", function () {
+      var searchInput = document.getElementById("searchInput");
+      var searchContainer = document.getElementById("searchContainer");
+      var closeIcon = document.getElementById("closeIcon");
+      var searchIcon = document.getElementById("searchIcon");
+      var overlay = document.getElementById("overlay");
+  
+      searchInput.addEventListener("focus", function () {
+          searchContainer.classList.add("fullscreen");
+          overlay.style.display = "block";
+          closeIcon.style.display = "block";
+          searchIcon.style.display = "none";
+      });
+  
+      closeIcon.addEventListener("click", function () {
+          searchContainer.classList.remove("fullscreen");
+          overlay.style.display = "none";
+          closeIcon.style.display = "none";
+          searchInput.value = "";
+          searchInput.blur();
+          searchIcon.style.display = "block";
+      });
+  
+      overlay.addEventListener("click", function () {
+          closeIcon.click();
+      });
+  });
+  
+
+document.addEventListener("DOMContentLoaded", function () {
+  var productTitles = document.querySelectorAll(".product-title-busca");
+  productTitles.forEach(function (title) {
+      title.style.textDecoration = "none";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("searchInput");
+  const resultsList = document.getElementById("searchResults");
+  const overlay = document.getElementById("overlay-busca");
+  const searchIcon = document.getElementById("searchIcon");
+  const closeIcon = document.getElementById("closeIcon");
+
+  searchInput.focus();
+
+  searchInput.addEventListener("input", function () {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredResults = getFilteredResults(searchTerm);
+
+    displayResults(filteredResults);
+
+    updateIcons();
+  });
+
+  searchInput.addEventListener("keydown", function (event) {
+    if (event.keyCode === 8) {
+      const searchTerm = searchInput.value.toLowerCase();
+      const filteredResults = getFilteredResults(searchTerm);
+
+      displayResults(filteredResults);
+      updateIcons();
+    }
+  });
+
+  closeIcon.addEventListener("click", function () {
+    searchInput.value = ""; 
+    hideResults();
+    updateIcons();
+  });
+
+  searchInput.addEventListener("click", function (event) {
+    event.stopPropagation(); 
+
+    const suggestedProducts = getSuggestedProducts();
+    displaySuggestedProducts(suggestedProducts);
+    updateIcons();
+  });
+
+  document.addEventListener("click", function () {
+    hideResults();
+  });
+
+  overlay.addEventListener("click", function () {
+    hideResults();
+  });
+
+  resultsList.addEventListener("click", function (event) {
+    const target = event.target.closest(".product-item");
+    if (target) {
+      const link = target.querySelector("a");
+      if (link) {
+        window.location.href = link.href;
+      }
+    }
+  });
+
+  function getFilteredResults(searchTerm) {
+    const allResults = [
+      { title: "Fone de ouvido bluetooth Lenovo ", image: "assets/images/fone11.png", link: "https://youngpeople.com.br/fones/fone.html" },
+      { title: "Fone de ouvido bluetooth Moniss", image: "assets/images/foneUni.png", link: "" },
+      { title: "Relógio Smart bluetooth Wifi", image: "assets/images/smart.png", link: "" },
+      { title: "Chapéu Young People cor bege", image: "assets/images/boneyp.jpg", link: "" },
+      { title: "Chapéu Young People cor vermelho e preto", image: "assets/images/boneyp2.jpg", link: "" },
+      { title: "Chapéu Young People Preto", image: "assets/images/boneyp3.jpg", link: "" },
+      { title: "Boné Young People branco", image: "assets/images/boneYP4.jpg", link: "" },
+      { title: "Boné Young People vermelho", image: "assets/images/boneYpVermelho.jpg", link: "" },
+      { title: "Estelizador de Ph 200ml lançamento", image: "assets/images/estelizadorPh.jpg", link: "" },
+      { title: "Atuantyy Sérum un 30ml", image: "assets/images/atuantyy.jpg", link: "" },
+      { title: "Perfume Young People Infinity Man", image: "assets/images/youngPeopleInfiniit.jpg", link: "" },
+      { title: "Perfume Young People Infinity Essence", image: "assets/images/youngPeopleInfiniit3.jpg", link: "" },
+      { title: "Perfume Young People Infinity Man duo", image: "assets/images/youngPeopleInfiniit22.jpg", link: "" },
+      { title: "Copo Young People Inox", image: "assets/images/copoYoung.jpg", link: "" },
+      { title: "Camisa Popeye Preta", image: "assets/images/camisaPopeyePreta.jpg", link: "https://youngpeople.com.br/camisas/popaye.html" },
+    ];
+
+    return allResults.filter(result => result.title.toLowerCase().includes(searchTerm));
+  }
+
+  function displayResults(results) {
+    resultsList.innerHTML = "";
+
+    if (searchInput.value === "") {  
+      const suggestedProducts = getSuggestedProducts();
+      displaySuggestedProducts(suggestedProducts);
+    } else {
+      const filteredResults = getFilteredResults(searchInput.value.toLowerCase());
+      filteredResults.forEach(result => {
+        const li = document.createElement("li");
+        li.className = "product-item";
+
+        const image = document.createElement("img");
+        image.src = result.image;
+        image.alt = result.title;
+        image.className = "product-image";
+
+        const title = document.createElement("span");
+        title.textContent = result.title;
+        title.className = "product-title-busca"; 
+
+        const link = document.createElement("a");
+        link.href = result.link;
+        link.appendChild(image);
+        link.appendChild(title);
+
+        li.appendChild(link);
+        resultsList.appendChild(li);
+      });
+
+      if (filteredResults.length > 0) {
+        showResults();
+      } else {
+        hideResults();
+      }
+    }
+  }
+
+  function showResults() {
+    resultsList.style.display = "block";
+    overlay.style.opacity = 1;
+    overlay.style.display = "block";
+  }
+
+  function hideResults() {
+    resultsList.style.display = "none";
+    overlay.style.opacity = 0;
+    overlay.style.display = "none";
+  }
+
+  function getSuggestedProducts() {
+    return [
+      { title: "Acessórios", image: "assets/img/projects/console.png", link: "" },
+      { title: "Modas", image: "assets/img/projects/nike-jordan.png", link: "" },
+      { title: "Estética", image: "assets/img/projects/relógio.png", link: "" },
+      { title: "Suplementos", image: "assets/img/projects/whey.png", link: "" },
+      { title: "Outros", image: "assets/img/projects/Philco-Tv.png", link: "" },
+    ];
+  }
+
+  function displaySuggestedProducts(products) {
+    resultsList.innerHTML = "";
+
+    products.forEach(product => {
+      const li = document.createElement("li");
+      li.className = "product-item";
+
+      const image = document.createElement("img");
+      image.src = product.image;
+      image.alt = product.title;
+      image.className = "product-image";
+
+      const title = document.createElement("span");
+      title.textContent = product.title;
+      title.className = "product-title-busca"; 
+
+      const link = document.createElement("a");
+      link.href = product.link;
+      link.appendChild(image);
+      link.appendChild(title);
+
+      li.appendChild(link);
+      resultsList.appendChild(li);
+    });
+
+    showResults();
+  }
+
+  function updateIcons() {
+    searchIcon.style.display = searchInput.value === "" ? "block" : "none";
+    closeIcon.style.display = searchInput.value === "" ? "none" : "block";
+  }
+});
+
+
+</script>
+
+</html>
